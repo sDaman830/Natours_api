@@ -45,6 +45,12 @@ app.route('/api/v1.users/:id')
     .patch(updateUser)
     .delete(deleteUser);
 
+const getAllUser = (req, res) => {
+    res.status(500).json({
+        status: 'error',
+        message: 'This route is not ye defined'
+    });
+};
 app.post('/api/v1/tours', (req, res) => {
     // console.log(req.body);
     const newID = tours[tours.length - 1].id + 1;
@@ -66,3 +72,4 @@ app.listen(port, () => {
     console.log('Running')
 });
 
+const tRouter = express.Router();
