@@ -13,6 +13,10 @@ const port = 3000;
 // app.post('/', (req, res) => {
 //     res.send('POST');
 // })
+app.use((req, res, next) => {
+    console.log(`Middle ware`);
+    next();
+});
 const tours = JSON.parse(fs.readFileSync(`/Users/damanpreetsinghghatoura/Desktop/Natours_api/dev-data/data/tours-simple.json`));
 app.get('/api/v1/tours', (req, res) => {
     res.status(200).json({
