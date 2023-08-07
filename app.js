@@ -39,6 +39,11 @@ app.get('/api/v1/tours/:id', (req, res) => {
         }
     })
 })
+app.route('/api/v1/users').get(getAllUser).post(CreateUser)
+app.route('/api/v1.users/:id')
+    .get(getUsers)
+    .patch(updateUser)
+    .delete(deleteUser);
 
 app.post('/api/v1/tours', (req, res) => {
     // console.log(req.body);
