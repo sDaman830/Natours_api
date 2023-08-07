@@ -2,6 +2,8 @@ const express = require('express');
 const fs = require('fs');
 const app = express();
 app.use(express.json());
+const morgan = require('morgan');
+
 // app.get('/', (req, res) => {
 
 //     res.status(200).json({ message: 'Hello from the server', app: 'Natours' });
